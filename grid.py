@@ -20,7 +20,7 @@ def solveFutoshiki(grid,row,col):
 
     if col == N:
         row += 1
-        col = 0
+        col = 1
 
     if grid[row][col] > 0:
         return solveFutoshiki(grid, row, col+1)
