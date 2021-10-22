@@ -9,6 +9,15 @@ for i in range(n):
     List.append(List1)
 
 print(List)
+
+def isNumPresent(List, row, col, num):
+    for x in range(n):
+        if List[row][x] == num:
+            return False
+    for x in range(n):
+        if List[x][col] == num:
+            return False
+
 def solveFutoshiki(List,row,col):
     if(row == n-1 and col == n):
         return True
