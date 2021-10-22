@@ -25,7 +25,13 @@ def solveFutoshiki(List,row,col):
             if solveFutoshiki(List, row, col+1):
                 return True
         List[row][col] = 0
-    return False  
-                                
+    return False
+
+
+    if(solveFutoshiki(List,0,0)):
+        printing(List)
+        else: 
+            print("No solution exists")           
+            
 
     
