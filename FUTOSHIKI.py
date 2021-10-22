@@ -21,8 +21,6 @@ def isPresentCol(grid, col, num):
 
 
 def Futoshiki(grid, row, col):
-	if (row == M - 1 and col == M):
-		return True
 
 	for x in range(4):
                 for y in range(4):
