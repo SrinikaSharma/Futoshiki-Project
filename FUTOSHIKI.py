@@ -8,4 +8,30 @@ def findCellNum(futoshiki):
     return
 print(findCellNum(futoshiki))
 
+M = 4
+
+def isPresentRow(grid, row, num):
+	for x in range(4):
+		if grid[row][x] == num:
+			return False
+def isPresentCol(grid, col, num):		    
+	for x in range(4):
+		if grid[x][col] == num:
+			return False
+
+
+def Futoshiki(grid, row, col):
+	if (row == M - 1 and col == M):
+		return True
+
+	for x in range(4):
+                for y in range(4):
+                        if x < 4:
+                                x++
+                        if x = 4:
+                                x = 0
+                                y++
+        
+                                
+
     
