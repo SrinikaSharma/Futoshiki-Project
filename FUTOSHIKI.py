@@ -36,6 +36,13 @@ def solveFutoshiki(List,row,col):
         List[row][col] = 0
     return False
 
+    def printing(List):
+    print("The answer is :")
+    for i in range(n):
+        for j in range(n):
+            print(List[i][j], end = " ")
+        print()
+
 
     if(solveFutoshiki(List,0,0)):
         printing(List)
