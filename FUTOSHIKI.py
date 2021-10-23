@@ -47,7 +47,28 @@ def solveFutoshiki(List,row,col):
     if(solveFutoshiki(List,0,0)):
         printing(List)
         else: 
-            print("No solution exists")           
+            print("No solution exists") 
+
+
+
+import pygame
+pygame.init()
+pygame.display.set_caption('FUTOSHIKI')
+font = pygame.font.SysFont('comic sans',38)
+img = font.render('score :',True,(0,0,0))
+running = True
+while running:
+    screen = pygame.display.set_mode((700,700))
+    screen.fill((182, 164, 166))
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = false
+    for i in range(0,4):
+        for j in range(0,4):
+            pygame.draw.rect(screen,(215, 207, 219), pygame.Rect(40 + j*180,40 + i*180, 80, 80))
+    screen.blit(img, (620, 620))
+    pygame.display.flip()
+          
             
 
     
