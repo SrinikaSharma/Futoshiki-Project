@@ -60,7 +60,7 @@ while running:
     screen.fill((182, 164, 166))
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
-            running = false
+            running = False
     for i in range(0,4):
         for j in range(0,4):
             pygame.draw.rect(screen,(215, 207, 219), pygame.Rect(66.6 + j*133.2,66.6 + i*133.2, 66.6, 66.6))
