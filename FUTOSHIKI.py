@@ -54,19 +54,16 @@ def solveFutoshiki(List,row,col):
 import pygame
 pygame.init()
 pygame.display.set_caption('FUTOSHIKI')
-font = pygame.font.SysFont('comic sans',38)
-img = font.render('score :',True,(0,0,0))
 running = True
 while running:
-    screen = pygame.display.set_mode((600,700))
+    screen = pygame.display.set_mode((600,600))
     screen.fill((182, 164, 166))
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = false
     for i in range(0,4):
         for j in range(0,4):
-            pygame.draw.rect(screen,(215, 207, 219), pygame.Rect(20 + j*145,20 + i*145, 125, 125))
-    screen.blit(img, (20, 620))
+            pygame.draw.rect(screen,(215, 207, 219), pygame.Rect(66.6 + j*133.2,66.6 + i*133.2, 66.6, 66.6))
     pygame.display.flip()
           
             
