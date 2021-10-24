@@ -1,0 +1,17 @@
+import pygame
+pygame.init()
+pygame.display.set_caption('FUTOSHIKI')
+running = True
+while running:
+    screen = pygame.display.set_mode((600,600))
+    screen.fill((182, 164, 166))
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+    for i in range(0,4):
+        for j in range(0,4):
+            pygame.draw.rect(screen,(215, 207, 219), pygame.Rect(66.6 + j*133.2,66.6 + i*133.2, 66.6, 66.6))
+    pygame.display.flip()
+          
+            
+
