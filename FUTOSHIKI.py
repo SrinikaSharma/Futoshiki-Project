@@ -1,4 +1,4 @@
-List = []
+puzzle = []
 n = int(input("Size of puzzle NxN"))
 print("Enter Numbers")
 for i in range(n):
@@ -6,9 +6,7 @@ for i in range(n):
     for j in range(n):
         value = int(input("Value -- "))
         List1.append(value)
-    List.append(List1)
-
-print(List)
+    puzzle.append(List1)
 
 def isNumPresent(List, row, col, num):
     for x in range(n):
@@ -17,8 +15,18 @@ def isNumPresent(List, row, col, num):
     for x in range(n):
         if List[x][col] == num:
             return False
+    if (puzzle[0][1] < puzzle[1][1]):
+        return True
+    if (puzzle[1][2] < puzzle[2][2]):
+        return True
+    if (puzzle[2][3] < puzzle[3][3]):
+        return True
+    if puzzle[0][3] > puzzle[1][3]:
+        return True
+    if puzzle[2][0] > puzzle[2][1]:
+        return True 
 
-def solveFutoshiki(List,row,col):
+def solveFutoshiki(puzzle,row,col):
     if(row == n-1 and col == n):
         return True
 
@@ -26,28 +34,24 @@ def solveFutoshiki(List,row,col):
         row += 1
         col = 0
 
-    if List[row][col] > 0:
-        return solveFutoshiki(List, row, col+1)
+    if puzzle[row][col] > 0:
+        return solveFutoshiki(puzzle, row, col+1)
     for num in range(1,n+1):
-        if isNumPresent(List,row,col,num):
+        if isNumPresent(puzzle,row,col,num):
             List[row][col] = num
-            if solveFutoshiki(List, row, col+1):
+            if solveFutoshiki(puzzle, row, col+1):
                 return True
-        List[row][col] = 0
+        puzzle[row][col] = 0
     return False
 
-    def printing(List):
-    print("The answer is :")
-    for i in range(n):
-        for j in range(n):
-            print(List[i][j], end = " ")
-        print()
+    def futoshiki_result():
+    print("Solution")
+    if solveFutoshiki(puzzle,0,0):
+        puzzle_printer(puzzle,logic)
+    else :
+        print("not possible")
 
-
-    if(solveFutoshiki(List,0,0)):
-        printing(List)
-        else: 
-            print("No solution exists") 
+futoshiki_result()
 
 
 
