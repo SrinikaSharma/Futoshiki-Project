@@ -44,7 +44,7 @@ def solveFutoshiki(puzzle,row,col):
         puzzle[row][col] = 0
     return False
 
-    def futoshiki_result():
+def futoshiki_result():
     print("Solution")
     if solveFutoshiki(puzzle,0,0):
         puzzle_printer(puzzle,logic)
