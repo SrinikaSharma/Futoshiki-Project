@@ -1,5 +1,5 @@
 puzzle = []
-n = int(input("Size of puzzle NxN"))
+n = 4
 print("Enter Numbers")
 for i in range(n):
     List1 = []
@@ -7,6 +7,33 @@ for i in range(n):
         value = int(input("Value -- "))
         List1.append(value)
     puzzle.append(List1)
+logic = [
+    ["", "", ""],
+    ["", "^", "", "v"],
+    
+    ["", "", ""],
+    ["", "", "^", ""],
+    
+    [">", "", ""],
+    ["", "", "", "^"],
+    
+    ["", "", ""],
+    ["", "", "", ""],
+]
+def puzzle_printer(puzzle, logic):
+    for i, l_line in enumerate(logic):
+        if (i % 2 == 0):
+            line = ""
+            for j in range(len(puzzle[0]) - 1):
+                line += "{n}{l:1}".format(n=puzzle[i // 2][j], l=l_line[j])
+            line += "{}".format(puzzle[i // 2][-1])
+            print(line)
+        else:
+            line = ""
+            for l in range(len(l_line) - 1):
+                line += "{:1} ".format(l_line[l])
+            line += "{}".format(l_line[-1])
+            print(line)
 
 def isNumPresent(List, row, col, num):
     for x in range(n):
