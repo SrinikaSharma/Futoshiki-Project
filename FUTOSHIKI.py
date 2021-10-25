@@ -7,6 +7,7 @@ for i in range(n):
         value = int(input("Value -- "))
         List1.append(value)
     puzzle.append(List1)
+print(puzzle)
 logic = [
     ["", "", ""],
     ["", "^", "", "v"],
@@ -30,9 +31,8 @@ def puzzle_printer(puzzle, logic):
             print(line)
         else:
             line = ""
-            for l in range(len(l_line) - 1):
+            for l in range(len(l_line)):
                 line += "{:1} ".format(l_line[l])
-            line += "{}".format(l_line[-1])
             print(line)
 
 def isNumPresent(puzzle, row, col, num):
