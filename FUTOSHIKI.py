@@ -35,12 +35,12 @@ def puzzle_printer(puzzle, logic):
             line += "{}".format(l_line[-1])
             print(line)
 
-def isNumPresent(List, row, col, num):
+def isNumPresent(puzzle, row, col, num):
     for x in range(n):
-        if List[row][x] == num:
+        if puzzle[row][x] == num:
             return False
     for x in range(n):
-        if List[x][col] == num:
+        if puzzle[x][col] == num:
             return False
     if (puzzle[0][1] < puzzle[1][1]):
         return True
@@ -65,7 +65,7 @@ def solveFutoshiki(puzzle,row,col):
         return solveFutoshiki(puzzle, row, col+1)
     for num in range(1,n+1):
         if isNumPresent(puzzle,row,col,num):
-            List[row][col] = num
+            puzzle[row][col] = num
             if solveFutoshiki(puzzle, row, col+1):
                 return True
         puzzle[row][col] = 0
