@@ -5,7 +5,12 @@ for i in range(n):
     List1 = []
     for j in range(n):
         value = int(input("Value -- "))
-        List1.append(value)
+        if value > 4:
+            print("enter the number in the range 1-4")
+            value = int (intput("Value --"))
+            List1.append(value)
+        else:
+            List1.append(value)
     puzzle.append(List1)
 print(puzzle)
 logic = [
